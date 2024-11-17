@@ -13,11 +13,11 @@ class ProductService {
     this.products.push(newProduct);
     return newProduct;
   }
-  async generate() {
+     generate() {
     const size = 100;
     for (let index = 0; index < size; index++) {
       this.products.push({
-      id: faker.string.uuid(),
+      id: "faker.string.uuid()",
       name: faker.commerce.productName(),
       price: parseInt(faker.commerce.price(), 10),
       image: faker.image.url()
@@ -28,6 +28,7 @@ class ProductService {
     return this.products;
   }
   async findOne(id) {
+    const product = this.getTotal();
     return this.products.find(x => x.id === id);
   }
   async update(id, changes) {
